@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.post {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+form input, form textarea {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+}
+
+.timestamp {
+    font-size: 0.8em; /* Makes the text 80% of normal size */
+    color: gray; /* Light gray to make it visually subtle */
+}
