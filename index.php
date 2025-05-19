@@ -21,9 +21,9 @@ $result = $conn->query("SELECT * FROM posts ORDER BY created_at DESC");
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo "<h2>" . htmlspecialchars($row['title']) . "</h2>";
-            echo "<p>" . nl2br(htmlspecialchars($row['content'])) . "</p>";
-            echo '<p class="timestamp">' . nl2br(htmlspecialchars($row['created_at'])) . '</p>';
+            echo "<h2>" . htmlspecialchars($row['title'], ENT_QUOTES, 'UTF-8') . "</h2>";
+            echo "<p>" . nl2br(htmlspecialchars($row['content'], ENT_QUOTES, 'UTF-8')) . "</p>";
+            echo '<p class="timestamp">' . htmlspecialchars($row['created_at']) . '</p>';
             echo "<hr>";
         }
     } else {

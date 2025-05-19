@@ -7,8 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {  // Checks if form was submitted
         $content = trim($_POST["content"]);
 
         // Sanitize input (prevents XSS attacks)
-        $title = htmlspecialchars($title, ENT_QUOTES, 'UTF-8');
-        $content = htmlspecialchars($content, ENT_QUOTES, 'UTF-8');
+        $title = $title;
+        $content = $content;
 
         if (!empty($title) && !empty($content)) {  // Ensures fields are not empty
             //  Prepares the SQL query

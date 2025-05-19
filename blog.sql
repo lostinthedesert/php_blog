@@ -8,6 +8,3 @@ CREATE TABLE posts (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO posts (title, content) VALUES 
-('First Post', 'This is my first blog post!'),
-('PHP is Awesome', 'Learning PHP for web development.');

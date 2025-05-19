@@ -7,10 +7,10 @@ if (file_exists(__DIR__ . '/.env')) {
 }
 
 // Database connection using environment variables
-$host = $env['DB_HOST'];
-$user = $env['DB_USER'];
-$password = $env['DB_PASSWORD'];
-$dbname = $env['DB_NAME'];
+$host = $env['MARIADB_HOSTNAME'];
+$user = $env['MARIADB_USER'];
+$password = $env['MARIADB_PASS'];
+$dbname = $env['MARIADB_NAME'];
 
 $conn = new mysqli($host, $user, $password, $dbname);
 
