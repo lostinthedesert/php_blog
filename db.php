@@ -1,5 +1,7 @@
 <?php
 
+$envPath = getenv('ENV_FILE') ?: __DIR__ . '/.env';
+
 if (file_exists(__DIR__ . '/.env')) {
     $env = parse_ini_file(__DIR__ . '/.env');
 } else {

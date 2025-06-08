@@ -1,26 +1,37 @@
-body {
+.index {
     font-family: Arial, sans-serif;
     max-width: 800px;
     margin: auto;
     padding: 20px;
+    background-color: #141313;   /* Just in case Bootstrap isn't enforcing it */
+    color: #9197ce;              /* Default text color */
+}
+
+.new_post {
+    font-family: Arial, sans-serif;
+    background-color: #141313;
+    color: #fff; 
 }
 
 h1 {
-    color: #333;
+    color: #9197ce;           /* White or light gray for headers */
+    text-align: center; 
 }
 
 .post {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #444; /* Subtle divider for dark backgrounds */
     padding: 10px 0;
 }
 
-form input, form textarea {
-    width: 100%;
-    margin: 5px 0;
-    padding: 10px;
-}
 
 .timestamp {
-    font-size: 0.8em; /* Makes the text 80% of normal size */
-    color: gray; /* Light gray to make it visually subtle */
+    font-size: 0.8em;
+    color: #aaa;              /* Lighter gray for contrast */
+}
+
+#editor-container {
+    max-width: 700px;      /* or whatever width you like */
+    background-color: #141313; /* Optional: better contrast for dark themes */
+    border-radius: 5px;
+    padding: 10px;
 }

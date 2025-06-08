@@ -27,25 +27,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {  // Checks if form was submitted
     }
 }
 ?>
-<?php echo __FILE__; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v2.4">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Post</title>
 </head>
-<body>
+<body class="new_post">
     <h1>Add a New Blog Post</h1>
     <form method="post" action="new_post.php">
         <label for="title">Title:</label>
-        <input type="text" name="title" required><br><br>
+        <input class="new_post" type="text" name="title" required><br><br>
 
         <label for="content">Content:</label><br>
-        <textarea name="content" rows="5" cols="50" required></textarea><br><br>
-
-        <button type="submit">Submit</button>
+        <div id="editor-container">
+          <div id="editor" style="height: 400px;"></div>
+          <input type="hidden" name="content" id="content">
+          <button type="submit">Submit</button>
+        </div>
     </form>
     <p><a href="index.php">Back to Blog</a></p>
+    <script>
+      var quill = new Quill('#editor', {
+        theme: 'snow',
+        modules: {
+          toolbar: [
+            ['bold', 'italic', 'underline'],
+            [{ list: 'ordered' }, { list: 'bullet' }],
+            ['link']
+          ]
+        }
+      });
+
+  // On form submit, copy Quill content into the hidden input
+  document.querySelector('form').addEventListener('submit', function () {
+    document.querySelector('#content').value = quill.root.innerHTML;
+  });
+</script>
+
 </body>
 </html>
