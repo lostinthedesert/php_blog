@@ -13,7 +13,7 @@ require 'db.php'; // Include database connection
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
     
     <!-- Optional custom styles -->
-    <link rel="stylesheet" href="style.css?v2.4">
+    <link rel="stylesheet" href="style.css?v2.5">
 </head>
 <body class="index">
     <h1 class="my-4">Agreeable Sharing Time Blog🍉</h1>

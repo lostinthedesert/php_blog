@@ -15,7 +15,14 @@
 
 h1 {
     color: #9197ce;           /* White or light gray for headers */
-    text-align: center; 
+    text-align: center;
+    font-size: 2.5em;
+    padding: 20px;
+    background-color: #222;     /* Dark gray banner */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);  /* Subtle depth */
+    margin-bottom: 40px;
+    letter-spacing: 1px;        /* Slight spacing between letters */ 
 }
 
 .post {
