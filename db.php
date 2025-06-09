@@ -1,6 +1,7 @@
 <?php
 
-$env = parse_ini_file(getenv('ENV_FILE')) ?: parse_ini_file(__DIR__ . '/.env');
+$envPath = getenv('ENV_FILE');
+$env = $envPath ? parse_ini_file($envPath) : parse_ini_file(__DIR__ . '/.env');
 
 
 // Database connection using environment variables
