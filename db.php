@@ -1,12 +1,7 @@
 <?php
 
-$envPath = getenv('ENV_FILE') ?: __DIR__ . '/.env';
+$env = getenv('ENV_FILE') ?: parse_ini_file(__DIR__ . '/.env');
 
-if (file_exists(__DIR__ . '/.env')) {
-    $env = parse_ini_file(__DIR__ . '/.env');
-} else {
-    die("Error: .env file not found.");
-}
 
 // Database connection using environment variables
 $host = $env['MARIADB_HOSTNAME'];
