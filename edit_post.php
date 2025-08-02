@@ -33,7 +33,7 @@ if (isset($_GET['id'])) {
             <link rel="stylesheet" href="style.css?v2.4">
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Add New Post</title>
+            <title>Edit Post</title>
         </head>
         <body class="new_post">
             <h1>Edit Blog Post</h1>
@@ -44,10 +44,20 @@ if (isset($_GET['id'])) {
 <?php }
 
 // List all posts
+if (isset($_GET['deleted'])) {
+    echo "<p style='color: green;'>Post deleted successfully.</p>";
+}
 $result = $conn->query("SELECT id, title FROM posts ORDER BY created_at DESC");
 echo "<h1>Select a Post to Edit</h1><ul>";
 while ($row = $result->fetch_assoc()) {
     $safeTitle = htmlspecialchars($row['title']);
-    echo "<li><a href='edit_post.php?id={$row['id']}'>{$safeTitle}</a></li>";
+    $postId = (int)$row['id'];
+    echo "<li><a href='edit_post.php?id={$row['id']}'>{$safeTitle}</a>";
+    // Secure delete form
+    echo " <form method='post' action='delete_post.php' style='display:inline;' onsubmit='return confirm(\"Are you sure?\")'>";
+    echo "<input type='hidden' name='id' value='{$postId}'>";
+    echo "<button type='submit'>Delete</button>";
+    echo "</form>";
+    echo "</li>";
 }
 echo "</ul>";
